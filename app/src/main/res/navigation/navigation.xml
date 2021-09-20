@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/nav_products">
+
+    <fragment
+        android:id="@+id/nav_products"
+        android:name="ru.mikov.storage.ui.products.ProductsFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/action_nav_products_to_add_product"
+            app:destination="@id/add_product" />
+        <action
+            android:id="@+id/action_nav_products_to_filter_product"
+            app:destination="@id/filter_product" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_product"
+        android:name="ru.mikov.storage.ui.addproduct.AddProductFragment"
+        android:label="Add Product"
+        tools:layout="@layout/fragment_add_product" >
+        <action
+            android:id="@+id/action_add_product_to_nav_products"
+            app:destination="@id/nav_products"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="product"
+            app:argType="ru.mikov.storage.data.local.room.entities.Product"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/filter_product"
+        android:name="ru.mikov.storage.ui.filter.ProductFilterFragment"
+        android:label="Filter" >
+        <action
+            android:id="@+id/action_filter_product_to_add_product"
+            app:destination="@id/add_product" />
+    </fragment>
+</navigation>

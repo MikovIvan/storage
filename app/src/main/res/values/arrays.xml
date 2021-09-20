@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_values">
+        <item>title</item>
+        <item>amount</item>
+        <item>code</item>
+    </string-array>
+    <string-array name="pref_options">
+        <item>title</item>
+        <item>amount</item>
+        <item>code</item>
+    </string-array>
+
+    <string-array name="db_values">
+        <item>room</item>
+        <item>sql</item>
+    </string-array>
+    <string-array name="db_options">
+        <item>room</item>
+        <item>sql</item>
+    </string-array>
+</resources>
